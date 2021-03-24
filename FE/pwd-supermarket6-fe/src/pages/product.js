@@ -1,13 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import bgprod from '../assets/bgprod.jpg'
+
 import {
     Card,
     Button
 } from 'react-bootstrap'
 
 import {Link} from 'react-router-dom'
-
 
 //  NOTE import action
 import { getAllProd } from '../action/prodAction'
@@ -22,7 +23,7 @@ class Products extends React.Component {
             <div style={styles.divutama}>
                 <h1 style={{color: 'white'}}>PRODUCTS</h1>
                 <div style={{display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap'}}>
-                    {this.props.products.map((item, index) => {
+                    {this.props.product.map((item, index) => {
                         return (
                             <Card bg='secondary' style={{ width: '18rem', marginBottom: '20px', borderRadius: '30px'}} key={index}>
                                 <Card.Img variant="top" src={item.images} style={{borderTopLeftRadius:'30px', borderTopRightRadius:'30px'}}/>
@@ -31,10 +32,9 @@ class Products extends React.Component {
                                     <Card.Text style={styles.text}>{item.kategori}</Card.Text>
                                     
                                     <div style={styles.button}>
-                                        <Button variant="secondary">💖💖💖</Button>
-                                        NOTE
-                                        {/* buat ngambil kalo di klik buy now item 1, ngelink ke detail item 1 */}
-                                        {/* <Button variant="dark" as={Link} to={`/detail?id=${item.id}`}>Details 🛒</Button> */}
+                                        {/* <Button variant="secondary">💖💖💖</Button> */}
+                                        {/* //NOTE buat ngambil kalo di klik buy now item 1, ngelink ke detail item 1 */}
+                                        <Button variant="dark" as={Link} to={`/detail?id=${item.id}`}>Details 🛒</Button> 
                                     </div>
                                 </Card.Body>
                             </Card>
@@ -63,13 +63,15 @@ const styles= {
     },
     divutama: {
         padding: '20px',
-        backgroundColor: 'grey'
+        backgroundImage: `url(${bgprod})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        products: state.product.data
+        product: state.product.data
     }
 }
 

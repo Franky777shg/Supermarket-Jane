@@ -3,9 +3,11 @@ import { combineReducers } from 'redux'
 
 // nyambungin nya itu pake react redux
 import { userReducer } from './userReducer'
+import { prodReducer } from './prodReducer'
 
 const allReducer= combineReducers ({
-    user: userReducer
+    user: userReducer,
+    product: prodReducer
 })
 
 export default allReducer

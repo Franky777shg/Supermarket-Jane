@@ -7,6 +7,8 @@ import {
     Modal
 } from 'react-bootstrap'
 
+import bglogin from '../assets/bg-login.jpg'
+
 import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -127,7 +129,8 @@ const styles = {
         display: 'flex',
         justifyContent: 'center',
         height: '100vh',
-        background: "(../assets/bg-login) no-repeat center",
+        // background: "../assets/bg-login no-repeat center",
+        backgroundImage: `url(${bglogin})`,
         backgroundSize: 'cover'
     },
     center: {
