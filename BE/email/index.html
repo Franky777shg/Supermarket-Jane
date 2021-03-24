@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center{
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            color: rgb(71, 52,179);
+        }
+    </style>
+</head>
+<body>
+    <img src="https://unsplash.com/photos/7eQlPra81zQ" alt="logo" height="150px" width="150px">
+    <h1>Parcel Package Customer</h1>
+    <h3>Email Verification</h3>
+    <hr>
+    <hr>
+    <h2>Hello, {{name}} !</h2>
+    <h3>Click Link Below to Verify your Account :</h3>
+    <h3>
+        <a href="http://localhost:2000/verification?{{token}}">
+            http://localhost:2000/verification?{{token}}
+        </a>
+    </h3>
+</body>
+</html>
