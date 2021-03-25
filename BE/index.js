@@ -35,7 +35,7 @@ const { userRouter, profileRouter, prodRouter, carouselRouter } = require('./rou
 app.use('/user', userRouter)
 app.use('/profile', profileRouter)
 app.use('/product', prodRouter)
-app.use('/carousel', carouselRouter)
+// app.use('/carousel', carouselRouter)
 
 db.connect((err) => {
     if (err) return console.log(`ERROR CONNECTING: ${err.stack}`)
