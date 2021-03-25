@@ -10,6 +10,7 @@ import LoginPage from './pages/login'
 import Register from './pages/register'
 import Verification from './pages/verification'
 import Profile from './pages/profile'
+import Detail from './pages/productdetail'
 
 
 // NOTE import action
@@ -34,7 +35,7 @@ class App extends React.Component {
           <Route path='/register' component={Register} />
           <Route path='/verification' component={Verification} />
           <Route path='/profile' component={Profile} />
-          {/* <Route path='/category' component={Category} /> */}
+          <Route path='/detail' component={Detail} />
         </Switch>
       </div>
     )
