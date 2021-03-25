@@ -25,8 +25,8 @@ class Products extends React.Component {
                 <div style={{display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap'}}>
                     {this.props.product.map((item, index) => {
                         return (
-                            <Card bg='secondary' style={{ width: '18rem', marginBottom: '20px', borderRadius: '30px'}} key={index}>
-                                <Card.Img variant="top" src={item.images} style={{borderTopLeftRadius:'30px', borderTopRightRadius:'30px'}}/>
+                            <Card bg='secondary' style={{ width: '18rem', marginBottom: '20px', borderRadius: '20px'}} key={index}>
+                                <Card.Img variant="top" src={item.images} style={{borderTopLeftRadius:'20px', borderTopRightRadius:'20px'}}/>
                                 <Card.Body style={styles.body}>
                                     <Card.Title>{item.nama}</Card.Title>
                                     <Card.Text style={styles.text}>{item.kategori}</Card.Text>
@@ -51,7 +51,7 @@ const styles= {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-around',
-        height: '350px'
+        height: '150px'
     },
     text: {
         display:'flex',
