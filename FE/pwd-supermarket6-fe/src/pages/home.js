@@ -14,9 +14,15 @@ class Home extends React.Component {
             <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
                {/* <h1>THIS IS HOME</h1> */}
                <Carousel1 />
-               <Button variant='primary' as={Link} to='/product'>Go To Products Page</Button>
+               <Button variant='primary' as={Link} to='/product' style={styles.button}>Go To Products Page</Button>
             </div>
         )
+    }
+}
+
+const styles= {
+    button: {
+        marginTop: '20px'
     }
 }
 
