@@ -34,7 +34,7 @@ class Products extends React.Component {
                                     <div style={styles.button}>
                                         {/* <Button variant="secondary">💖💖💖</Button> */}
                                         {/* //NOTE buat ngambil kalo di klik buy now item 1, ngelink ke detail item 1 */}
-                                        <Button variant="dark" as={Link} to={`/detail?id=${item.id}`}>Details 🛒</Button>
+                                        <Button variant="dark" as={Link} to={`/detail?id=${item.id_products}`}>Details 🛒</Button>
                                     </div>
                                 </Card.Body>
                             </Card>
