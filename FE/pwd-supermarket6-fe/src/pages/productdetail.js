@@ -1,5 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
+
 
 import {
     Image,
@@ -22,7 +24,7 @@ class ProdDetail extends React.Component {
             image: '',
             stok: '',
             total: 0,
-            // toLogin: false,
+            toLogin: false,
             cartErr: false,
             toCart: false
         }
@@ -34,7 +36,10 @@ class ProdDetail extends React.Component {
 
     render() {
 
-        const { cartErr } = this.state
+        const { cartErr, stok, total, toLogin } = this.state
+
+        // redirect ke login kalo belom login pas klik checkout
+        if (toLogin) return <Redirect to='/login' />
 
         return (
             <div style={styles.container}>
@@ -51,6 +56,19 @@ class ProdDetail extends React.Component {
                         <h4>Price: IDR {this.props.product.harga ? this.props.product.harga.toLocaleString() : 0}</h4>
                         <div style={{ display: 'flex', flexDirection: 'column', marginTop: '10px' }}>
                             <h5>Stock: {this.props.product.stock} </h5>
+
+                            <h5>Quantity </h5>
+                                <div style={styles.divqty}>
+                                    <Button
+                                        disabled={total >= stok ? true : false}
+                                        variant='light'
+                                        onClick={() => this.setState({ total: total + 1 })}>➕</Button>
+                                    <h3 style={{ backgroundColor: 'white', height: '38px' }}>{total}</h3>
+                                    <Button
+                                        disabled={total <= 0 ? true : false}
+                                        variant='light'
+                                        onClick={() => this.setState({ total: total - 1 })}>➖</Button>
+                                </div>
 
                             <Button>
                                 <i class="fas fa-cart-plus"></i>Add To Cart 🛒
@@ -81,7 +99,7 @@ class ProdDetail extends React.Component {
 
 const styles = {
     container: {
-        marginTop: '70px',
+        // marginTop: '70px',
         // padding: '10px 20px',
         // paddingTop: '80px',
         // backgroundSize: 'cover',
@@ -107,6 +125,14 @@ const styles = {
     divbtn: {
         display: 'flex',
         flexDirection: 'column'
+    },
+    divqty: {
+        marginBottom: '10px', 
+        marginRight: '20px', 
+        display: 'flex', 
+        justifyContent: 'space-between', 
+        height: '38px', 
+        width: '43.25' 
     }
 }
 

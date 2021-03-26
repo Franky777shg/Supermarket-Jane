@@ -31,10 +31,11 @@ const db = require('./database')
 
 // NOTE import routernya
 // NOTE ngambilnya object krn di exportnya object
-const { userRouter, profileRouter, prodRouter } = require('./routers')
+const { userRouter, profileRouter, prodRouter, detailRouter } = require('./routers')
 app.use('/user', userRouter)
 app.use('/profile', profileRouter)
 app.use('/product', prodRouter)
+app.use('./detail', detailRouter)
 
 db.connect((err) => {
     if (err) return console.log(`ERROR CONNECTING: ${err.stack}`)
