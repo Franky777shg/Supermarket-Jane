@@ -17,7 +17,7 @@ class Carousel1 extends React.Component {
         return (
             <div style={styles.divutama}>
                 <Carousel>
-                    <Carousel.Item interval={1000}>
+                    <Carousel.Item interval={3000}>
                         <img
                             className="d-block"
                             src={cocacola}
@@ -29,7 +29,7 @@ class Carousel1 extends React.Component {
                             <p>Choose from our variety of beverages for your thirst quenchers !</p>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item interval={500}>
+                    <Carousel.Item interval={3000}>
                         <img
                             className="d-block"
                             src={cheetos}
