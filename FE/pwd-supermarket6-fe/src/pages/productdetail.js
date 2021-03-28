@@ -45,7 +45,7 @@ class ProdDetail extends React.Component {
     }
 
     render() {
-        const { cartErr, detailProd } = this.state
+        const { cartErr, detailProd, total, stok } = this.state
 
         // if (this.state.detailProd)
 
@@ -59,15 +59,43 @@ class ProdDetail extends React.Component {
                     </div>
 
                     <div style={styles.divdesc}>
-                        <h6>Name: {detailProd.nama}</h6>
+                        <h4>Name: {detailProd.nama}</h4>
                         <p>Category: {detailProd.kategori}</p>
                         <h4>Price: IDR {detailProd.harga ? detailProd.harga.toLocaleString() : 0}</h4>
                         <div style={{ display: 'flex', flexDirection: 'column', marginTop: '10px' }}>
                             <h5>Stock: {detailProd.stock} </h5>
 
-                            <Button>
-                                <i class="fas fa-cart-plus"></i>Add To Cart 🛒
-                            </Button>
+                            <h5>Quantity:</h5>
+                            <div style={styles.divqty}>
+                                <Button
+                                style={{marginRight: '15px'}}
+                                    disabled={total <= 0 ? true : false}
+                                    variant='light'
+                                    onClick={() => this.setState({ total: total - 1 })}
+                                >
+                                    <i class="fas fa-minus-square"></i>
+                                </Button>
+
+                                <h5 style={{marginTop: '5px'}}>{total}</h5>
+
+                                <Button
+                                    style={{marginLeft: '15px'}}
+                                    disabled={total >= detailProd.stock ? true : false}
+                                    variant='light'
+                                    onClick={() => this.setState({ total: total + 1 })}
+                                >
+                                    <i class="fas fa-plus-square"></i>
+                                </Button>
+
+                            </div>
+                            <div style={styles.divbtn}>
+                                <Button
+                                    style={styles.btncart}
+                                >
+                                    <i class="fas fa-cart-plus"></i>Add To Cart 🛒
+                                </Button>
+                            </div>
+
 
                             <Modal show={cartErr} onHide={() => this.setState({ cartErr: false })}>
                                 <Modal.Header closeButton>
@@ -119,7 +147,16 @@ const styles = {
     },
     divbtn: {
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'row'
+    },
+    btncart: {
+        height: '40px',
+        width: "200px"
+    },
+    divqty: {
+        display: 'flex',
+        flexDirection: "row",
+        marginBottom: '15px'
     }
 }
 
