@@ -2,6 +2,7 @@ const userController = require('./userController')
 const profileController = require('./profileController')
 const prodController = require('./prodController')
 const carouselController = require('./carouselController')
+// const detailController = require('./detailController')
 
 // NOTE EXPORT controllernya
 module.exports = {
@@ -9,4 +10,5 @@ module.exports = {
     profileController,
     prodController,
     carouselController
+    // detailController
 }

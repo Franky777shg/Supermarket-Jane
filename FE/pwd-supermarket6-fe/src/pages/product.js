@@ -67,6 +67,7 @@ const styles = {
     divutama: {
         padding: '20px',
         backgroundImage: `url(${bgprod})`,
+        // objectFit: 'fill',
         backgroundPosition: 'center',
         backgroundSize: 'cover'
     }

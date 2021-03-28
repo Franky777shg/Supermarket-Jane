@@ -15,5 +15,19 @@ module.exports = {
             // NOTE ini kalau berhasil
             res.status(200).send(result)
         })
+    },
+    getProdDetail : (req, res) => {
+        // NOTE define query 
+        const id= +req.params.id
+
+        const queryDetail = `select * from products 
+                             where id_products=${db.escape(id)} `
+
+        db.query(queryDetail, (err, result) => {
+            if(err) return res.status(500).send(err)
+
+            // NOTE ini kalau berhasil
+            res.status(200).send(result)
+        })
     }
 }
