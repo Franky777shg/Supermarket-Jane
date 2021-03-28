@@ -65,7 +65,7 @@ class ProdDetail extends React.Component {
                         <div style={{ display: 'flex', flexDirection: 'column', marginTop: '10px' }}>
                             <h5>Stock: {detailProd.stock} </h5>
 
-                            <h5>Quantity:</h5>
+                            <h6>Quantity:</h6>
                             <div style={styles.divqty}>
                                 <Button
                                 style={{marginRight: '15px'}}
